@@ -1,0 +1,66 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "iterativshield"
+version = "0.1.0"
+description = "IterativShield™ — governance-native security layer for IterativAI agents"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+keywords = ["iterativai", "security", "popia", "guard", "redact", "scan", "governance"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+# Runtime dependencies — stdlib only for now.
+# Self-hosted inference model deps are managed separately via IterativPipeline (Δ).
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov",
+    "ruff",
+    "mypy",
+]
+upstream-sync = [
+    "httpx",       # for upstream diff fetcher
+    "pyyaml",
+]
+
+[project.urls]
+Homepage = "https://github.com/LG-Gibs/iterativshield"
+Repository = "https://github.com/LG-Gibs/iterativshield"
+Changelog = "https://github.com/LG-Gibs/iterativshield/blob/main/CHANGELOG.md"
+
+# ---------------------------------------------------------------------------
+# Tool configuration
+# ---------------------------------------------------------------------------
+
+[tool.hatch.build.targets.wheel]
+packages = ["iterativ"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+select = ["E", "F", "W", "I", "N", "UP", "S", "B"]
+ignore = ["A002"]  # allow shadow of builtin 'input' in guard/redact APIs
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=iterativ --cov-report=term-missing"
