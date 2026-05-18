@@ -43,5 +43,10 @@
   },
   "dependencies": {
     "safety-agent": "^0.1.6"
+  },
+  "overrides": {
+    "fast-xml-parser": ">=5.3.5",
+    "axios": ">=1.15.2",
+    "picomatch": ">=4.0.4"
   }
 }
