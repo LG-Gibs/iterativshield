@@ -38,6 +38,9 @@
     "next": ">=15.2.3",
     "fast-uri": ">=3.1.1",
     "fast-xml-parser": ">=5.3.5",
-    "picomatch": ">=4.0.4"
+    "picomatch": ">=4.0.4",
+    "tar": ">=7.5.11",
+    "lodash-es": ">=4.18.0",
+    "path-to-regexp": ">=8.4.0"
   }
 }
