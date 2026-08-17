@@ -33,16 +33,16 @@
     "url": "https://github.com/superagent-ai/superagent"
   },
   "devDependencies": {
-    "@types/node": "^25.8.0",
+    "@types/node": "^26.2.0",
     "dotenv": "^17.4.2",
-    "typescript": "^6.0.3",
-    "vitest": "^4.0.18"
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10"
   },
   "engines": {
     "node": ">=18"
   },
   "dependencies": {
-    "safety-agent": "^0.1.6"
+    "safety-agent": "^0.1.7"
   },
   "overrides": {
     "fast-xml-parser": ">=5.3.5",
